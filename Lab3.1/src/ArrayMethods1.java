@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArrayMethods1
 {
 
@@ -8,8 +10,12 @@ public class ArrayMethods1
 		int[] list1 = {4, 8, 3, 1, 0, 2, 6, 5, 7, 9};
 		double[] list2 = {1.6, 1.2, 1.0, 1.3, 1.4, 1.7, 1.9, 1.5, 1.8, 1.1};
 		//String[] list3 = {};
+		System.out.println(Arrays.toString(list1));
+		System.out.println(Arrays.toString(list2));
 		insertionSort(list1);
-		System.out.println(list1);
+		selectionSort(list2);
+		System.out.println(Arrays.toString(list1));
+		System.out.println(Arrays.toString(list2)); // doesnt work
 	}
 		
 		public static void insertionSort(int[] list1)
