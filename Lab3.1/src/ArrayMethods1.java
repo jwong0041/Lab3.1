@@ -30,13 +30,13 @@ public class ArrayMethods1
 		System.out.println(Arrays.toString(list2));
 		System.out.println("Selection sort took: " + time + " nanoseconds.");
 		
-		start = System.nanoTime();
+		/*start = System.nanoTime();
 		bubbleSort(list3);
 		end = System.nanoTime();
 		time = end - start;
 		System.out.println(Arrays.toString(list3));
 		System.out.println("Bubble sort took: " + time + " nanoseconds.");
-
+*/
 	}
 		
 		public static void insertionSort(int[] list1)
@@ -73,7 +73,7 @@ public class ArrayMethods1
 		}
 		
 		
-		public static void bubbleSort(String[] list3)
+		/*public static void bubbleSort(String[] list3)
 		{
 			for (int g = 0; g < list3.length - 1; g++)
 			{
@@ -86,7 +86,7 @@ public class ArrayMethods1
 				
 			}
 		}
-		
+		*/
 	
 		
 		
