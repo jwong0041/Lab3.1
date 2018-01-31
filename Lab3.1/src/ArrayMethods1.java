@@ -9,13 +9,34 @@ public class ArrayMethods1
 		
 		int[] list1 = {4, 8, 3, 1, 0, 2, 6, 5, 7, 9};
 		double[] list2 = {1.6, 1.2, 1.0, 1.3, 1.4, 1.7, 1.9, 1.5, 1.8, 1.1};
-		//String[] list3 = {};
+		String[] list3 = {"d", "b", "h", "a", "g", "j", "e", "c", "i", "f"}; //taking as variable instead of string D: //nvm i fixed it i didnt have quotations
+		
 		System.out.println(Arrays.toString(list1));
 		System.out.println(Arrays.toString(list2));
+		System.out.println(Arrays.toString(list3));
+		System.out.println("--- Begin Sorting ---");
+		
+		long start = System.nanoTime();
 		insertionSort(list1);
-		selectionSort(list2);
+		long end = System.nanoTime();
+		long time = end - start;
 		System.out.println(Arrays.toString(list1));
-		System.out.println(Arrays.toString(list2)); // doesnt work
+		System.out.println("Insertion sort took: " + time + " nanoseconds.");
+		
+		start = System.nanoTime();
+		selectionSort(list2);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println(Arrays.toString(list2));
+		System.out.println("Selection sort took: " + time + " nanoseconds.");
+		
+		start = System.nanoTime();
+		bubbleSort(list3);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println(Arrays.toString(list3));
+		System.out.println("Bubble sort took: " + time + " nanoseconds.");
+
 	}
 		
 		public static void insertionSort(int[] list1)
@@ -23,7 +44,7 @@ public class ArrayMethods1
 			for(int x = 1; x< list1.length; x++)
 			{
 				int z = list1[x];
-				int y = x-1;
+				int y = x - 1;
 				while(y >= 0 && list1[y] > z)
 				{
 					list1[y+1] = list1[y];
@@ -44,38 +65,47 @@ public class ArrayMethods1
 					if (list2[b] < list2[min])
 					{
 						min = b;
-						swap(list2, min, b);
 					}
-				}
+				}	
+				swapD(list2, min, a);
+					 
 			}
-			
 		}
 		
-		/*
+		
 		public static void bubbleSort(String[] list3)
 		{
-			
+			for (int g = 0; g < list3.length - 1; g++)
+			{
+				for (int h = g+1; h < list3.length; h++)
+				
+					if (list3[h] > list3[g])
+					
+					 swapS(list3, h, g);
+					
+				
+			}
 		}
-		*/
+		
 	
 		
 		
 		
-	public static void swap(int[] arr, int index1, int index2)
+	public static void swapI(int[] arr, int index1, int index2)
 	{
 		int temp = arr[index1];
 		arr[index1] = arr[index2];
 		arr[index2] = temp;
 	}
 	
-	public static void swap(double[] arr, int index1, int index2)
+	public static void swapD(double[] arr, int index1, int index2)
 	{
 		double temp = arr[index1];
 		arr[index1] = arr[index2];
 		arr[index2] = temp;
 	}
 	
-	public static void swap(String[] arr, int index1, int index2)
+	public static void swapS(String[] arr, int index1, int index2)
 	{
 		String temp = arr[index1];
 		arr[index1] = arr[index2];
